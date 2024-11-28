@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.streamnow.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000112;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            font-family: Lato, sans-serif;
+            color: cyan;
+            text-align: center;
+        }
+        .search-container {
+            position: relative;
+            margin: 20px auto;
+            width: 50%;
+            max-width: 400px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+        .navbar {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            color: cyan;
+        }
+        .movie-thumbnails {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .movie-thumbnails a img {
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>STREAMNOW</h2>
+    <div class="navbar">
+        <a href="atete.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="series.html">Series</a>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchBox" class="search-box" placeholder="Search..." autocomplete="off">
+        <button class="search-button" onclick="performSearch()">Search</button>
+        <div id="results" class="results"></div>
+    </div>
+    <div class="movie-thumbnails">
+        <a href="Now_You_See_Me_2_A.mp4" title="Now You See Me 2 Part A">
+            <img src="a4.jpg" alt="Now You See Me 2 Part A" width="150px">
+        </a>
+        <a href="Now_You_See_Me_2_B.mp4" title="Now You See Me 2 Part B">
+            <img src="a4.jpg" alt="Now You See Me 2 Part B" width="150px">
+        </a>
+        <a href="Now_You_See_Me.mp4" title="Now You See Me">
+            <img src="a3.jpg" alt="Now You See Me" width="150px">
+        </a>
+        <a href="Emmaculete.mp4" title="Emmaculete">
+            <img src="a2.jpg" alt="Emmaculete" width="150px">
+        </a>
+    </div>
+    <script>
+        function performSearch() {
+            const searchQuery = document.getElementById('searchBox').value.trim();
+            const resultsDiv = document.getElementById('results');
+            
+            if (searchQuery === "") {
+                resultsDiv.style.display = 'none';
+                return;
+            }
+
+            // Mock search results
+            const results = [
+                { title: "Movies Anywhere", link: "https://moviesanywhere.com/home", description: "Watch your favorite movies anywhere." },
+                { title: "Now You See Me", link: "Now_You_See_Me.mp4", description: "Now You See Me movie download link." },
+                { title: "Emmaculete", link: "Emmaculete.mp4", description: "Emmaculete movie download link." }
+            ];
+
+            const filteredResults = results.filter(result =>
+                result.title.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+
+            if (filteredResults.length === 0) {
+                resultsDiv.innerHTML = `<p>No results found for "${searchQuery}".</p>`;
+            } else {
+                resultsDiv.innerHTML = filteredResults.map(result => `
+                    <div class="result-item">
+                        <a href="${result.link}" target="_blank">${result.title}</a>
+                        <p>${result.description}</p>
+                    </div>
+                `).join('');
+            }
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

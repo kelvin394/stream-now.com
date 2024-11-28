@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>www.srteamnow.com</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+	<div align="center"> <h2 align="center"><font face="lato" color="cyan" size="5em">STREAMNOW</font></h2>		
+			<body bgcolor="red">	
+                       <div id="nhed"><div class="goj"><a href=""></a></div>
+                       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .search-container {
+            position: relative;
+            width: 400px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 20px;
+            width: 400px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+        #movies3{
+            background: #00001c;
+            width: 100%;
+        }
+                #movies4{
+            background:#00001c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container" id="Search" >
+    	<button class="search-button" onclick="performSearch()">Search</button>
+        <input type="text" id="searchBox" class="search-box" placeholder="Search..." autocomplete="off">
+    <div id="results" class="resultsbox" style="display: none;">
+   </div>
+    <script>
+        function performSearch() {
+            const searchQuery = document.getElementById('searchBox').value.trim();
+            const resultsDiv = document.getElementById('results');
+
+            if (searchQuery === "") {
+                resultsDiv.style.display = 'none';
+                return;
+            }
+
+            // Simulate search results
+            const results = [
+                { title: "moviesanywhere", link: "https://moviesanywhere.com/home", description: "" },
+                { title: "result 1", link: "#", description: "" },
+      
+                { title: "result 1", link: "#", description: "" }
+               
+         
+            ];
+
+            let htmlContent = "";
+
+            results.forEach(result => {
+                htmlContent += `
+                    <div class="result-item">
+                        <a href="${result.link}" target="_blank">${result.title}</a>
+                        <p>${result.description}</p>
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = htmlContent;
+            resultsDiv.style.display = 'block';
+        }
+        </script>
+</div>
+      	        <div id="tnv">
+      	        	<div class="mxwd"><a href="atete.html">Home</a>&nbsp;&nbsp;&nbsp;<a class="trn" href="movies.html">Movies</a>&nbsp;&nbsp;&nbsp;<a href="https://moviesanywhere.com/home">Series</a></div><hr></div>
+                <div id="result"></div>
+            <div id="mxwd"> </div>
+            <div class="mxwd" id="movies3" title="action series" name="action series" width="100%"><div class="dflex"></div>
+                        <a href="A SHOP KILLERS S01.html" title="A SHOP KILLERS S01EP01(2024)"><img src="a6.jpg" alt="A SHOP KILLERS S01EP01 (2024)" width="15%" height="35%"><span></span>
+                            <a href="Outer Bank S04.html" title="Outer Bank Ep3(2024)"><img src="a11.jpg" alt="A SHOP KILLERS S01EP01 (2024)" width="15%" height="35%"><span></span>
+                        <a href="EL INTERNADO LAS CUMBLES.html" title="EL INTERNADO LAS CUMBLES EP13(2024)"><img src="a15.jpg" alt="L INTERNADO LAS CUMBLES EP1 (2024)" width="15%" height="35%"><span></span>
+            </div>
+   </body>                
+</html>
